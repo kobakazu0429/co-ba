@@ -1,11 +1,11 @@
 {
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "editor.formatOnSave": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [
     140
   ],
-  // "editor.formatOnSave": true,
   "files.encoding": "utf8",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
@@ -13,7 +13,6 @@
     "public/**": true,
     "node_modules/**": true
   },
-  "editor.formatOnSave": false,
   "tslint.autoFixOnSave": true,
   "prettier.tslintIntegration": true
 }
