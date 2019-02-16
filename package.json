@@ -19,6 +19,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@types/react-slick": "^0.23.3",
     "babel-plugin-styled-components": "^1.7.1",
     "classnames": "^2.2.6",
     "emotion": "^9.2.9",
@@ -48,6 +49,7 @@
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.9",
     "react-helmet": "^5.2.0",
+    "react-slick": "^0.23.2",
     "typescript": "^3.0.3"
   },
   "devDependencies": {
