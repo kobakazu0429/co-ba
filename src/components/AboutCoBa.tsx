@@ -1,9 +1,6 @@
 import * as React from "react";
 import styled from "react-emotion";
 
-import { widths, media } from "../styles/variables";
-import { getEmSize } from "../styles/mixins";
-
 const AboutCoBa = () => (
   <Wrapper>
     <Title>co-baとは</Title>
