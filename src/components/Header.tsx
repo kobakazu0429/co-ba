@@ -2,37 +2,48 @@ import * as React from "react";
 import styled from "react-emotion";
 import { Link } from "gatsby";
 
-import { heights, dimensions } from "../styles/variables";
+import { heights, media, widths } from "../styles/variables";
 
 import logo from "../assets/images/co-ba-logo.png";
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
-  padding: 0 ${dimensions.containerPadding}rem;
   border-bottom: solid 1px;
+  padding: 0 calc((100% - ${widths.lg}px) / 2);
+
+  @media ${media.mobile} {
+    display: none;
+  }
 `;
 
 const Logo = styled.img`
-  height: 100%;
+  height: ${heights.header}px;
   padding: 5px 0;
-  float: left;
   filter: invert(100%);
 `;
 
-const NavLinksWrapper = styled.ul`
-  float: right;
+const Ul = styled.ul`
+  display: flex;
   list-style: none;
+  padding: 0;
 `;
 
-const NavLink = styled.li`
-  float: left;
-  font-size: 35px;
+const Li = styled.li`
+  font-size: 1.5rem;
   line-height: ${heights.header}px;
   vertical-align: middle;
-  margin: 0 50px;
+
+  &:first-child {
+    margin-right: auto;
+  }
+
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
 `;
 
 const LinkWrapper = styled(Link)`
+  display: inline-block;
   color: #000;
 
   &:hover,
@@ -43,23 +54,25 @@ const LinkWrapper = styled(Link)`
 
 const Header: React.SFC = () => (
   <StyledHeader>
-    <LinkWrapper to="/">
-      <Logo src={logo} />
-    </LinkWrapper>
-    <NavLinksWrapper>
-      <NavLink>
+    <Ul>
+      <Li>
+        <LinkWrapper to="/">
+          <Logo src={logo} />
+        </LinkWrapper>
+      </Li>
+      <Li>
         <LinkWrapper to="/history">History</LinkWrapper>
-      </NavLink>
-      <NavLink>
+      </Li>
+      <Li>
         <LinkWrapper to="/events">Events</LinkWrapper>
-      </NavLink>
-      <NavLink>
+      </Li>
+      <Li>
         <LinkWrapper to="/photos">Photos</LinkWrapper>
-      </NavLink>
-      <NavLink>
+      </Li>
+      <Li>
         <LinkWrapper to="/access">Access</LinkWrapper>
-      </NavLink>
-    </NavLinksWrapper>
+      </Li>
+    </Ul>
   </StyledHeader>
 );
 
