@@ -69,9 +69,6 @@ const Header: React.SFC = () => (
       <Li>
         <LinkWrapper to="/photos">Photos</LinkWrapper>
       </Li>
-      <Li>
-        <LinkWrapper to="/access">Access</LinkWrapper>
-      </Li>
     </Ul>
   </StyledHeader>
 );
