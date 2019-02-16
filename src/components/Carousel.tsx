@@ -62,6 +62,7 @@ const settings = {
 
 const Wrapper = styled.div`
   margin: 0 -${getEmSize(widths.lg)}em;
+  margin-bottom: 100px;
 
   @media ${media.mobile} {
     margin: 0;
