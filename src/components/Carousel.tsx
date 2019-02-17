@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./../assets/css/slick.css";
 
-import { widths } from "../styles/variables";
+import { widths, media } from "../styles/variables";
 import { getEmSize } from "../styles/mixins";
 
 // Todo: replace co-ba carousel image for production
@@ -63,7 +63,7 @@ const settings = {
 const Wrapper = styled.div`
   margin: 0 -${getEmSize(widths.lg)}em;
 
-  @media screen and (max-width: 480px) {
+  @media ${media.mobile} {
     margin: 0;
   }
 `;

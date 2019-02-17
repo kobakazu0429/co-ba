@@ -2,37 +2,66 @@ import * as React from "react";
 import styled from "react-emotion";
 import { Link } from "gatsby";
 
-import { heights, dimensions } from "../styles/variables";
+import { heights, widths, media } from "../styles/variables";
 
 import logo from "../assets/images/co-ba-logo.png";
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
-  padding: 0 ${dimensions.containerPadding}rem;
   border-bottom: solid 1px;
+  padding: 0 calc((100% - ${widths.lg}px) / 2);
+
+  @media ${media.mobile} {
+    height: calc(${heights.header}px - 10px);
+  }
 `;
 
 const Logo = styled.img`
   height: 100%;
-  padding: 5px 0;
-  float: left;
   filter: invert(100%);
+  padding: 3% 0;
+
+  @media ${media.mobile} {
+    padding: 0;
+  }
 `;
 
-const NavLinksWrapper = styled.ul`
-  float: right;
+const Ul = styled.ul`
+  height: 100%;
+  display: flex;
   list-style: none;
+  padding: 0;
 `;
 
-const NavLink = styled.li`
-  float: left;
-  font-size: 35px;
-  line-height: ${heights.header}px;
+const Li = styled.li`
+  height: 100%;
   vertical-align: middle;
-  margin: 0 50px;
+
+  &:first-child {
+    margin-right: auto;
+  }
+
+  &:not(:first-child) {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    line-height: ${heights.header}px;
+  }
+
+  @media ${media.mobile} {
+    &:first-child {
+      margin: 0 1rem;
+    }
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+      display: none;
+    }
+  }
 `;
 
 const LinkWrapper = styled(Link)`
+  height: 100%;
+  display: inline-block;
   color: #000;
 
   &:hover,
@@ -43,23 +72,22 @@ const LinkWrapper = styled(Link)`
 
 const Header: React.SFC = () => (
   <StyledHeader>
-    <LinkWrapper to="/">
-      <Logo src={logo} />
-    </LinkWrapper>
-    <NavLinksWrapper>
-      <NavLink>
+    <Ul>
+      <Li>
+        <LinkWrapper to="/">
+          <Logo src={logo} />
+        </LinkWrapper>
+      </Li>
+      <Li>
         <LinkWrapper to="/history">History</LinkWrapper>
-      </NavLink>
-      <NavLink>
+      </Li>
+      <Li>
         <LinkWrapper to="/events">Events</LinkWrapper>
-      </NavLink>
-      <NavLink>
+      </Li>
+      <Li>
         <LinkWrapper to="/photos">Photos</LinkWrapper>
-      </NavLink>
-      <NavLink>
-        <LinkWrapper to="/access">Access</LinkWrapper>
-      </NavLink>
-    </NavLinksWrapper>
+      </Li>
+    </Ul>
   </StyledHeader>
 );
 
