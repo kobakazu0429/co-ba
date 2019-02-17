@@ -65,7 +65,10 @@ exports.createPages = async ({ graphql, actions }) => {
     const { slug, layout } = node.fields
 
     createPage({
-      path: slug,
+      // `/index`を除去
+      path: slug.endsWith("index/") ? slug.replace(/index\/$/, '') : slug,
+
+
       // This will automatically resolve the template to a corresponding
       // `layout` frontmatter in the Markdown.
       //
