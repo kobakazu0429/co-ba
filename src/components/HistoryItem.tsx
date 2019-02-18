@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled from "react-emotion";
 
+import { media } from "../styles/variables";
+
 import * as pic001 from "./../assets/images/TopCarousel/001.jpg";
 
 export interface IEdge {
@@ -30,7 +32,6 @@ const HistoryItem = (data: IEdge) => (
 );
 
 const Title = styled.div`
-  color: rgb(255, 255, 255);
   display: flex;
   width: 100%;
 
@@ -38,21 +39,6 @@ const Title = styled.div`
     margin-bottom: -20px;
     padding-bottom: 10px;
     border-bottom: solid 1px gray;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  margin-bottom: 30px;
-
-  :nth-child(2n + 1) {
-    flex-direction: row-reverse;
-
-    ${Title} {
-      justify-content: flex-end;
-    }
   }
 `;
 
@@ -70,8 +56,54 @@ const ImageWrapper = styled.div`
 
 const Description = styled.div`
   flex: 1;
-
   padding: 50px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 30px;
+
+  :nth-child(2n + 1) {
+    flex-direction: row-reverse;
+
+    ${Title} {
+      justify-content: flex-end;
+
+      @media ${media.mobile} {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  @media ${media.mobile} {
+    ${Title} {
+      @media ${media.mobile} {
+        justify-content: center;
+        text-align: center;
+
+        h5 {
+          width: 100vw;
+        }
+      }
+    }
+
+    ${ImageWrapper} {
+      width: 100%;
+
+      img {
+        height: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+    }
+
+    ${Description} {
+      padding: 0;
+    }
+  }
 `;
 
 export default HistoryItem;

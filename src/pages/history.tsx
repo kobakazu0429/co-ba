@@ -2,6 +2,8 @@ import * as React from "react";
 import styled from "react-emotion";
 import { StaticQuery, graphql } from "gatsby";
 
+import { colors } from "../styles/variables";
+
 import Page from "../components/Page";
 import Container from "../components/Container";
 import HistoryItem, { IEdge } from "../components/HistoryItem";
@@ -60,7 +62,7 @@ const Center = styled.div`
 `;
 
 const Title = styled.h1`
-  border-bottom: double 6px gray;
+  border-bottom: double 4px ${colors.black};
   width: 70%;
   padding-bottom: 10px;
   margin: 0 auto;
