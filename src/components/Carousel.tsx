@@ -43,7 +43,7 @@ const settings = {
   centerPadding: "10%",
   autoplay: true,
   autoplaySpeed: 2500,
-  speed: 2000,
+  speed: 2500,
   cssEase: "ease",
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,

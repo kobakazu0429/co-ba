@@ -42,7 +42,20 @@
   opacity: 0.5;
 }
 
+
+.slick-slide {
+  -webkit-transition: all 1.5s cubic-bezier(0.875, 0.110, 0.815, 1.015);
+     -moz-transition: all 1.5s cubic-bezier(0.875, 0.110, 0.815, 1.015);
+       -o-transition: all 1.5s cubic-bezier(0.875, 0.110, 0.815, 1.015);
+          transition: all 1.5s cubic-bezier(0.875, 0.110, 0.815, 1.015);
+  -webkit-transition-timing-function: cubic-bezier(0.875, 0.110, 0.815, 1.015);
+     -moz-transition-timing-function: cubic-bezier(0.875, 0.110, 0.815, 1.015);
+       -o-transition-timing-function: cubic-bezier(0.875, 0.110, 0.815, 1.015);
+          transition-timing-function: cubic-bezier(0.875, 0.110, 0.815, 1.015);
+}
+
 .slick-slide:not(.slick-center) {
+  opacity: 0.8;
   transform: scale(0.8);
 }
 
