@@ -16,41 +16,62 @@ export interface IEdge {
 const HistoryItem = (data: IEdge) => (
   <Wrapper>
     <Title>
-      {data.node.frontmatter.date} - {data.node.frontmatter.title}
+      <h5>
+        {data.node.frontmatter.date} - {data.node.frontmatter.title}
+      </h5>
     </Title>
-    <Content>
-      <Left>
-        <Image src={pic001} />
-      </Left>
-      <Description>{data.node.rawMarkdownBody}</Description>
-    </Content>
+    <ImageWrapper>
+      <img src={pic001} />
+    </ImageWrapper>
+    <Description>
+      <p>{data.node.rawMarkdownBody}</p>
+    </Description>
   </Wrapper>
 );
 
-const Wrapper = styled.div`
-  :nth-child(2n) {
-    flex-direction: row-reverse;
+const Title = styled.div`
+  color: rgb(255, 255, 255);
+  display: flex;
+  width: 100%;
+
+  h5 {
+    margin-bottom: -20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px gray;
   }
 `;
 
-const Title = styled.h5``;
-
-const Content = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  width: 100%;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 30px;
+
+  :nth-child(2n + 1) {
+    flex-direction: row-reverse;
+
+    ${Title} {
+      justify-content: flex-end;
+    }
+  }
 `;
 
-const Image = styled.img`
-  width: 100%;
-`;
+const ImageWrapper = styled.div`
+  width: 50%;
+  align-self: center;
+  align-content: center;
 
-const Left = styled.div`
-  flex-basis: 50%;
+  img {
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 const Description = styled.div`
-  flex-basis: 50%;
-  padding: 60px;
+  flex: 1;
+
+  padding: 50px;
 `;
 
 export default HistoryItem;

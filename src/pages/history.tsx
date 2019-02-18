@@ -68,6 +68,7 @@ const Title = styled.h1`
 
 const SubTitle = styled.h4`
   margin-top: 30px;
+  margin-bottom: 100px;
 `;
 
 export default IndexPage;
