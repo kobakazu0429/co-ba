@@ -10,13 +10,15 @@ const Banners = () => (
   <Wrapper>
     <Banner to="https://www.kure-nct.ac.jp/" src="https://www.kure-nct.ac.jp/images/logo.png" />
     <Banner to="https://www.kure-rad.io/" src={chk} />
-    <iframe
-      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcoba.kurekosen%2F&tabs&width=340&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-      width="340"
-      height="70"
-      frameBorder="0"
-      scrolling="no"
-    />
+    <Facebook>
+      <iframe
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcoba.kurekosen%2F&tabs&width=300&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+        width="300"
+        height="70"
+        frameBorder="0"
+        scrolling="no"
+      />
+    </Facebook>
   </Wrapper>
 );
 
@@ -29,6 +31,16 @@ const Wrapper = styled.div`
 
   @media ${media.mobile} {
     flex-direction: column;
+    margin: 0 auto;
+  }
+`;
+
+const Facebook = styled.div`
+  @media ${media.mobile} {
+    margin: 0 auto;
+    iframe {
+      display: block;
+    }
   }
 `;
 
