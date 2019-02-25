@@ -1,7 +1,7 @@
 ---
 date: 2014.09.21
 title: 製作開始！
-# thumbnailImage: ./natsukansai.jpg
+thumbnailImage: ./pic003.jpg
 ---
 ついに製作が開始しました。
 それぞれのグループが自分の役割を一生懸命していました。

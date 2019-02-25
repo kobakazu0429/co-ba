@@ -1,7 +1,7 @@
 ---
 date: 2014.09.22
 title: ついに完成！
-# thumbnailImage: ./natsukansai.jpg
+thumbnailImage: ./pic004.jpg
 ---
 この日の最初に、お披露目班が作ったTシャツが参加者全員に配られ
 て、一層団結力が増した状態で作業が始まりました。

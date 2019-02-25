@@ -1,7 +1,7 @@
 ---
 date: 2014.09.02
 title: デザインとチーム分け
-# thumbnailImage: ./natsukansai.jpg
+thumbnailImage: ./pic002.jpg
 ---
 ついにデザインをまとめた結果がツクルバさんから発表され、
 完成に一歩近づきました。

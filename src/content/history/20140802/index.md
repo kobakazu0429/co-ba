@@ -1,7 +1,7 @@
 ---
 date: 2014.08.02
 title: 考え方についてのレクチャー
-# thumbnailImage: ./natsukansai.jpg
+thumbnailImage: ./pic001.jpg
 ---
 この日は考え方についての説明を受けました。
 このプロジェクトは主にツクルバさん主催のプロジェクトなのですが、
