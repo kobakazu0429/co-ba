@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "react-emotion";
 import { StaticQuery, graphql } from "gatsby";
 
-import { colors } from "../styles/variables";
+import { colors, media } from "../styles/variables";
 
 import Page from "../components/Page";
 import Container from "../components/Container";
@@ -41,7 +41,7 @@ const IndexPage = () => (
 
 const GET_HISTORY = graphql`
   query {
-    allMarkdownRemark(limit: 100, filter: { fields: { slug: { regex: "/history/" } } }) {
+    allMarkdownRemark(limit: 100, sort: { fields: frontmatter___date, order: ASC }, filter: { fields: { slug: { regex: "/history//" } } }) {
       edges {
         node {
           id
@@ -49,6 +49,13 @@ const GET_HISTORY = graphql`
           frontmatter {
             date
             title
+            thumbnailImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -71,6 +78,10 @@ const Title = styled.h1`
 const SubTitle = styled.h4`
   margin-top: 30px;
   margin-bottom: 100px;
+
+  @media ${media.mobile} {
+    margin-bottom: 40px;
+  }
 `;
 
 export default IndexPage;

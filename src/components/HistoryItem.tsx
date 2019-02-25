@@ -1,9 +1,8 @@
 import * as React from "react";
 import styled from "react-emotion";
+import Img from "gatsby-image";
 
 import { media } from "../styles/variables";
-
-import * as pic001 from "./../assets/images/TopCarousel/001.jpg";
 
 export interface IEdge {
   node: {
@@ -11,6 +10,7 @@ export interface IEdge {
     frontmatter: {
       date: string;
       title: string;
+      thumbnailImage: any;
     };
   };
 }
@@ -23,7 +23,7 @@ const HistoryItem = (data: IEdge) => (
       </h5>
     </Title>
     <ImageWrapper>
-      <img src={pic001} />
+      <Img fluid={data.node.frontmatter.thumbnailImage.childImageSharp.fluid} />
     </ImageWrapper>
     <Description>
       <p>{data.node.rawMarkdownBody}</p>
@@ -36,7 +36,7 @@ const Title = styled.div`
   width: 100%;
 
   h5 {
-    margin-bottom: -20px;
+    margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: solid 1px gray;
   }
@@ -48,7 +48,8 @@ const ImageWrapper = styled.div`
   align-content: center;
 
   img {
-    height: 400px;
+    width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
   }
@@ -63,7 +64,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
   :nth-child(2n + 1) {
     flex-direction: row-reverse;
@@ -79,6 +80,7 @@ const Wrapper = styled.div`
   }
 
   @media ${media.mobile} {
+    margin-bottom: 10px;
     ${Title} {
       @media ${media.mobile} {
         justify-content: center;
@@ -95,8 +97,8 @@ const Wrapper = styled.div`
 
       img {
         height: auto;
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin-top: -40px;
+        margin-bottom: -60px;
       }
     }
 
