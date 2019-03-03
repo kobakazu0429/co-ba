@@ -6,6 +6,7 @@ import Events from "../components/Events";
 import IndexLayout from "../layouts";
 import Carousel from "./../components/Carousel";
 import AboutCoBa from "./../components/AboutCoBa";
+import Banners from "./../components/Banners";
 
 const IndexPage = () => (
   <IndexLayout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
         <Carousel />
         <AboutCoBa />
         <Events />
+        <Banners />
       </Container>
     </Page>
   </IndexLayout>
