@@ -1,5 +1,5 @@
 import { injectGlobal } from "emotion";
-import { dimensions, fonts, colors, breakpoints } from "./variables";
+import { dimensions, fonts, colors, breakpoints, media } from "./variables";
 import { getEmSize } from "./mixins";
 
 // tslint:disable-next-line:no-unused-expression
@@ -24,10 +24,14 @@ injectGlobal`
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.sansSerif};
-    color: ${colors.black};
+    color: ${colors.text};
     background-color: ${colors.white};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+
+    @media ${media.mobile} {
+      background-color: ${colors.backGround};
+    }
   }
 
   a {
@@ -114,6 +118,10 @@ injectGlobal`
   p {
     margin-top: 0;
     margin-bottom: 1rem;
+
+    @media ${media.mobile} {
+      color: ${colors.text};
+    }
   }
 
   strong {

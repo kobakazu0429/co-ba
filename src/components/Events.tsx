@@ -38,7 +38,7 @@ export default Events;
 
 const GET_EVENTS = graphql`
   query {
-    allMarkdownRemark(limit: 100) {
+    allMarkdownRemark(limit: 100, filter: { fields: { slug: { regex: "/events/" } } }) {
       edges {
         node {
           frontmatter {

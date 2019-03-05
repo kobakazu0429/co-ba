@@ -6,11 +6,7 @@ export const colors = {
   accent: "#ffb238",
   success: "#37b635",
   warning: "#ec1818",
-  ui: {
-    bright: "#e0d6eb",
-    light: "#f5f3f7",
-    whisper: "#fbfafc"
-  },
+  ui: { bright: "#e0d6eb", light: "#f5f3f7", whisper: "#fbfafc" },
   code: "#fcf6f0",
   gray: {
     dark: "hsla(270, 17.119554496%, 0%, 0.92)",
@@ -18,7 +14,9 @@ export const colors = {
     calm: "rgba(0, 0, 0, 0.54)"
   },
   white: "#fff",
-  black: "#000"
+  black: "#000",
+  text: "#545454",
+  backGround: "#fcfcfc"
 };
 
 export const fonts = {
